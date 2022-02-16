@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Redux | Contador</title>
+    <script src="redux.min.js"></script>
+</head>
+<body>
+    <div class="App-main">
+        <main>
+          <section class="wrap-main">
+            <section>
+              <div class="corpo">
+                <div class="sinal1"></div>
+                <section class="olhos">
+                  <div class="cilios">
+                    <p class="cilios1"></p>
+                    <p class="cilios2"></p>
+                    <p class="cilios3"></p>
+                    <p class="cilios4"></p>
+                    <p class="cilios5"></p>
+                    <p class="cilios6"></p>
+                  </div>
+                  <div class="olho-esquerdo">
+                    <div class="cor-azul">
+                      <div class="preta"></div>
+                    </div>
+                  </div>
+                  <div class="olho-direito">
+                    <div class="cor-azul">
+                      <div class="preta"></div>
+                    </div>
+                  </div>
+                </section>
+                <div class="box-text-1">
+                    <h1><span id="total"></span></h1>
+                </div>
+                <div class="boca">
+                  <div class="box-btn">
+                    <button class="btn" id="button">+</button>
+                    <button class="btn1" id="buttonDiminuir">-</button>
+                  </div>
+                  <div class="lingua" id="lingua"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+
+    <script>
+
+        const initialState = 0;
+
+        const SOMA = "somar";
+        const INCREMENTAR = "incrementar";
+        const DIMINUIR = 'diminuir';
+
+        function soma(payload){
+            return {type: SOMA, payload};
+        }
+
+        function incrementar(){
+            return {type: INCREMENTAR};
+        }
+
+        function diminuir(){
+            return {type: DIMINUIR};
+        }
+
+        function contador(state = initialState, action){
+            switch(action.type){
+                case INCREMENTAR:
+                    return state + 1;
+                case DIMINUIR:
+                    return state - 1;
+                case SOMA:
+                    return state + action.payload;
+                default:
+                    return state;
+            }
+        }
+
+        const reducer = Redux.combineReducers({contador})
+        const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+       
+        function render(){
+            const {contador} = store.getState();
+            const total = document.getElementById('total');
+            total.innerText = contador;
+        }
+        render();
+        
+        store.subscribe(render);
+
+        const button = document.getElementById('button');
+        button.addEventListener('click', () => store.dispatch(incrementar()));
+
+        const buttonMenos = document.getElementById('buttonDiminuir');
+        buttonMenos.addEventListener('click', () => store.dispatch(diminuir()));
+        
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

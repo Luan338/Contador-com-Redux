@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 20vh;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+  transform: translateY(-900px);
+  animation: entrada 0.8s forwards 1.5s, balance 2s alternate infinite 2.5s;
+}
+
+@keyframes entrada {
+  0% {
+    transform: translateY(-700px);
+  }
+
+  20% {
+    transform: translateY(-100px);
+  }
+
+  40% {
+    transform: translateY(-300px);
+  }
+
+  60% {
+    transform: translateY(-180px);
+  }
+
+  80% {
+    transform: translateY(-180px);
+  }
+
+  100% {
+    transform: translateY(-130px);
+  }
+}
+
+.App-main {
+  width: 100%;
+}
+
+.wrap-main {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.box-text-1 {
+  position: relative;
+  bottom: 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100px;
+  margin: 0 auto;
+}
+
+main {
+  padding-top: 190px;
+}
+
+.corpo {
+  position: relative;
+  background-color: #faf102;
+  width: 300px;
+  height: 450px;
+  border: none;
+}
+
+.sinal1 {
+  background-color: #d5a002;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.olhos {
+  margin: auto;
+  position: relative;
+  top: 40px;
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.olho-esquerdo {
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  animation: olhos 5s infinite alternate;
+}
+
+.olho-direito {
+  position: relative;
+  z-index: 1;
+  right: 8px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  animation: olhos 5s infinite alternate;
+}
+
+@keyframes olhos {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: rgb(253, 178, 178);
+  }
+}
+
+.cor-azul {
+  position: relative;
+  top: 25px;
+  left: 25px;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #00adf1;
+}
+
+.preta {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.cilios {
+  position: relative;
+}
+
+.cilios1 {
+  position: relative;
+  bottom: 8px;
+  left: 26px;
+  background-color: black;
+  width: 5px;
+  height: 20px;
+  transform: rotate(-20deg);
+}
+
+.cilios2 {
+  position: relative;
+  bottom: 39px;
+  left: 60px;
+  background-color: black;
+  width: 5px;
+  height: 20px;
+  transform: rotate(-5deg);
+}
+
+.cilios3 {
+  position: relative;
+  bottom: 51px;
+  left: 95px;
+  background-color: black;
+  width: 5px;
+  height: 20px;
+  transform: rotate(20deg);
+}
+
+.cilios4 {
+  position: relative;
+  bottom: 70px;
+  left: 150px;
+  background-color: black;
+  width: 5px;
+  height: 20px;
+  transform: rotate(-20deg);
+}
+
+.cilios5 {
+  position: relative;
+  bottom: 100px;
+  left: 182px;
+  background-color: black;
+  width: 5px;
+  height: 20px;
+}
+
+.cilios6 {
+  position: relative;
+  bottom: 110px;
+  left: 215px;
+  background-color: black;
+  width: 5px;
+  height: 20px;
+  transform: rotate(20deg);
+}
+
+.box-text-1 {
+  position: absolute;
+  left: 5%;
+  top: 45%;
+  width: 90%;
+}
+
+.boca {
+  border: 1px solid black;
+  background-color: black;
+  position: absolute;
+  left: 15px;
+  top: 290px;
+  width: 90%;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.box-btn {
+  position: absolute;
+  bottom: 90px;
+  left: 30%;
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.btn,
+.btn1 {
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
+  text-transform: capitalize;
+  width: 50px;
+  height: 100px;
+  padding: 4%;
+  border: 2px solid white;
+  color: #341940;
+  font-size: 1.3em;
+  top: 97%;
+  cursor: pointer;
+  font-family: "Open Sans Condensed", sans-serif;
+  transition: 1s all;
+  background-color: white;
+}
+.btn:hover {
+  color: white;
+  border: 1px solid white;
+  transition: 0.5s;
+  background-color: greenyellow;
+}
+
+.btn1:hover {
+  color: white;
+  border: 1px solid white;
+  transition: 0.5s;
+  background-color: red;
+}
+
+.lingua {
+  cursor: pointer;
+  position: absolute;
+  top: 110px;
+  left: 30px;
+  border-radius: 50px;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(231, 227, 227);
+}
+
+.lingua:hover {
+  animation: lingua 0.6s infinite alternate;
+}
+
+@keyframes lingua {
+  from {
+    background-color: rgb(231, 227, 227);
+  }
+
+  to {
+    background-color: red;
+  }
+}
